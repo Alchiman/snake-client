@@ -1,4 +1,5 @@
 const net = require("net");
+const { setInterval } = require("timers/promises");
 const connect = function() {
   const conn = net.createConnection({
     host: "165.227.47.243",
@@ -13,6 +14,20 @@ const connect = function() {
   conn.on("connect", () => {
     conn.write("Name: ACM");
   });
+
+  // conn.on("connect", () => {
+  //   conn.write("Move: up");
+  //   setInterval(() => {
+  //     conn.write("Move: right");
+  //   }, 2);
+  //   setTimeout(() => {
+  //     conn.write("Move: left");
+  //   }, 2000);
+  //   setTimeout(() => {
+  //     conn.write("Move: up");
+  //   }, 4000);
+  // });
+  //
   conn.on("data", (a) => {
     console.log(a);
   });
