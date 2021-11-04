@@ -1,6 +1,4 @@
-let conn;
 const setupInput = function(connection) {
-  conn = connection;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
@@ -15,19 +13,19 @@ const handleUserInput = function(key) {
     return;
   }
   if (key === "w") {
-    conn.write("Move: up");
+    connection.write("Move: up");
   }
   if (key === "a") {
-    conn.write("Move: left");
+    connection.write("Move: left");
   }
   if (key === "d") {
-    conn.write("Move: right");
+    connection.write("Move: right");
   }
   if (key === "s") {
-    conn.write("Move: down");
+    connection.write("Move: down");
   }
   if (key === "1") {
-    conn.write("Say: I am sending message");
+    connection.write("Say: I am sending message");
   }
   // console.log(key);
 };
