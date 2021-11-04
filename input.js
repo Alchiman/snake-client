@@ -26,6 +26,9 @@ const handleUserInput = function(key) {
   if (key === "s") {
     conn.write("Move: down");
   }
+  if (key === "1") {
+    conn.write("Say: I am sending message");
+  }
   // console.log(key);
 };
 
